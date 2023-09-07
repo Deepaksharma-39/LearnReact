@@ -1,4 +1,0 @@
-=>webpackage is basically a bundler used to budler our advanced scripting and styling 
-language and convert in into basic html,css and javascript codes that can be run on any internet browsers
-
-=>axios is a npm package which achives functionality similar to fetch in jaascript
