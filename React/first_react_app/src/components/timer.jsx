@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function Timer(){
 
@@ -34,6 +34,10 @@ function Timer(){
         stopTimer();
         settime(0);
     }
+    // if we change pages the timer should stop to prevent memory leak
+    useEffect(()=>{
+        return()=>{stopTimer();}
+    },[])
 
     return(
         <div>
