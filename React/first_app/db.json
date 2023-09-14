@@ -1,0 +1,49 @@
+{
+  "products": [
+    {
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5,
+      "name": "XYZ",
+      "price": 420,
+      "img-url": "https://i.imgur.com/Rg8n0k0.jpeg"
+    }
+  ],
+  "task": [
+    {
+      "title": "hello",
+      "status": false,
+      "id": 31
+    },
+    {
+      "title": "hello",
+      "status": false,
+      "id": 32
+    },
+    {
+      "title": "kyhahaha",
+      "status": true,
+      "id": 33
+    },
+    {
+      "title": "kya baat h",
+      "status": true,
+      "id": 34
+    },
+    {
+      "title": "this is working",
+      "status": false,
+      "id": 35
+    }
+  ]
+}
