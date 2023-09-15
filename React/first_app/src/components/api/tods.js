@@ -1,7 +1,8 @@
 import axios from "axios";
 
-export const getTodos = () => {
-    return axios("http://localhost:3000/task")
+export const getTodos = (args) => {
+  const {titleSortBy,page}= args;
+    return axios(`http://localhost:3000/task?_sort=title&_order=${titleSortBy}&_page=${page}&_limit=1`)
       .then((res) => res.data)
       .catch((error) => {
         console.log(error);
