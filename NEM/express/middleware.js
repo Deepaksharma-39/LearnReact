@@ -1,6 +1,10 @@
 const express =require("express")
 const app=express();
-const fs= require("fs")
+const fs= require("fs");
+const dnsRoutes = require("./dns/dns.routes");
+const productRoutes = require("./dns/dns.products");
+
+app.use(express.json())
 
 const rounteTimer=(req,res,next)=>{
     const st= new Date().getTime();
@@ -9,6 +13,11 @@ const rounteTimer=(req,res,next)=>{
     const diff=et-st
     console.log(req.url+" "+diff+" miliseconds routing time")
 }
+
+app.use("/dns",dnsRoutes,rounteTimer)
+
+app.use("/products",productRoutes);
+
 
 const checkUser=(req,res,next)=>{
     const {user} =req.query;
@@ -25,7 +34,7 @@ const checkUser=(req,res,next)=>{
 app.get("/",(req,res)=>{
     res.send("Homepage")
 })
-app.use(checkUser);
+// app.use(checkUser);
 
 app.get("/about",(req,res)=>{
     const data=fs.readFileSync("about.txt","utf-8")
