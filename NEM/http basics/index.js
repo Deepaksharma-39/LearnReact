@@ -1,10 +1,16 @@
-console.log("hi");
 
 const http=require("http");
+const fs= require("fs");
 
 const server=http.createServer((req,res)=>{
     if(req.url==="/post"){
-        res.end("Welcome to posts")
+        try{
+        const data=fs.readFileSync("./data.txt",{encoding:"utf-8"})
+        res.end(data);
+        }
+        catch{
+            res.end("try again");
+        }
     }else if(req.url==="/comment"){
         res.end("Welcome to commnt")
     }else if(req.url==="/march"){
@@ -16,7 +22,7 @@ const server=http.createServer((req,res)=>{
         res.end(JSON.stringify(obj))
     }
     else{
-        res.end("Welcome to hompage")
+        res.end("Welcome to port 5050");
     }
     
 })
