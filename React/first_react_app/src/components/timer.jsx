@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 function Timer(){
 
     const fixTime=(time)=>(time<10 ? `0`+time :time);
+    
     const formatTimeToString=(time)=>{
         const seconds=time%60;
         const min= Math.floor(time/60)%60;
