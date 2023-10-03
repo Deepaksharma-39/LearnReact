@@ -21,7 +21,7 @@ function Navbar() {
   ];
 
   return (
-    <div>
+    <div className={styles.navbar}>
       {paths.map((link) => (
         <NavLink
           //   style={({isActive}) => (isActive ? activeColor : defaultColor)}
