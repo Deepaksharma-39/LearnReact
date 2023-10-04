@@ -4,6 +4,7 @@ import AboutPage from "./AboutPage";
 import ContactPage from "./Contactpage";
 import UserPage from "./UserPage";
 import SinglePageUser from "./SingleUserPage";
+import PrivateRoute from "../Components/PrivateRoute";
 
 
 function AllRoutes(){
@@ -13,8 +14,8 @@ function AllRoutes(){
             < Route path="/" element={<HomePage/>}/>
             < Route path="/about" element={<AboutPage/>}/>
             < Route path="/contact" element={<ContactPage/>}/>
-            < Route path="/user" element={<UserPage/>}/>
-            < Route path="/users/:id" element={<SinglePageUser/>}/>
+            < Route path="/user" element={<PrivateRoute><UserPage/></PrivateRoute>}/>
+            < Route path="/users/:id" element={<PrivateRoute><SinglePageUser/></PrivateRoute>}/>
         </Routes>
         </div>
     )
