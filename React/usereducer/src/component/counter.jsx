@@ -8,12 +8,19 @@ import {
   resetAction,
 } from "./Action";
 
+const init={
+    counter:0,
+    isAuth:true,
+    key:"value"
+}
+
 function Counter() {
-  const [state, dispatch] = useReducer(Reducer, 0);
+  const [state, dispatch] = useReducer(Reducer, init);
   const [value, setValue] = useState(0);
+  console.log(state);
   return (
     <>
-      <div>Counter: {state}</div>
+      <div>Counter: {state.counter}</div>
       <input
         placeholder="Enter add by value"
         type="number"

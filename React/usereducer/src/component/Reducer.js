@@ -1,19 +1,21 @@
 function Reducer(state, action) {
   switch (action.type) {
     case "Increment":
-      return state + 1;
+      return {...state, counter:state.counter+1};
 
     case "Decrement":
-      return state - 1;
+        return {...state, counter:state.counter-1};
 
     case "Reset":
-      return 0;
+        return {...state, counter:0};
 
     case "AddValue":
-      return state + action.payload;
+        return {...state, counter:state.counter+action.payload};
+
 
     case "MinusValue":
-      return state - action.payload;
+        return {...state, counter:state.counter-action.payload};
+
 
     default:
       return state;
